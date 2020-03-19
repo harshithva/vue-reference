@@ -1,46 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="./css/style.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css"
-    />
-    <script
-      defer
-      src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"
-    ></script>
-  </head>
-  <body>
-    <div id="app">
-      <!-- <input type="text" v-model="message" />
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <link rel="stylesheet" href="./css/style.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css" />
+  <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+</head>
+
+<body>
+
+  <div id="app">
+    <!-- <input type="text" v-model="message" />
       <p>{{ message }}</p> -->
 
-      <!-- <ol>
+    <!-- <ol>
         <li v-for="name in names" :key="name.id">
           {{ name }}
         </li>
       </ol> -->
-      <!-- <input type="text" id="input" v-model="newName" /> -->
-      <!-- <button v-on:click="addName">Add</button> -->
-      <!-- <button @click="addName">Add</button> -->
+    <!-- <input type="text" id="input" v-model="newName" /> -->
+    <!-- <button v-on:click="addName">Add</button> -->
+    <!-- <button @click="addName">Add</button> -->
 
-      <!-- Attribute Binding -->
-      <!-- <button v-bind:title="title">Hover Over me</button> -->
-      <!-- <button @click="method" :title="title">Hover Over me</button> -->
-      <!-- <h1 :class="className">Hello world</h1> -->
-      <!-- <button :class="{'isLoading' : isLoading }" @click="toggleClass">
+    <!-- Attribute Binding -->
+    <!-- <button v-bind:title="title">Hover Over me</button> -->
+    <!-- <button @click="method" :title="title">Hover Over me</button> -->
+    <!-- <h1 :class="className">Hello world</h1> -->
+    <!-- <button :class="{'isLoading' : isLoading }" @click="toggleClass">
         click me
       </button> -->
 
-      <!-- Computed Properties -->
-      <!-- <h2 v-text="new Date()"></h2> -->
-      <!-- <h2>{{ reversedMsg }}</h2> -->
+    <!-- Computed Properties -->
+    <!-- <h2 v-text="new Date()"></h2> -->
+    <!-- <h2>{{ reversedMsg }}</h2> -->
 
-      <!-- <ol>
+    <!-- <ol>
         <li
           v-for="task in tasks"
           v-if="task.completed"
@@ -48,27 +48,39 @@
         ></li>
       </ol> -->
 
-      <!-- <ol>
+    <!-- <ol>
         <h2>Incomplete Tasks</h2>
         <li v-for="task in incompleteTasks" v-text="task.description"></li>
       </ol> -->
 
-      <!-- Components -->
-      <!-- <task>{{ message }}</task>
+    <!-- Components -->
+    <!-- <task>{{ message }}</task>
       <task>Go the store</task>
       <task>Go the store</task> -->
 
-      <!-- <task-list></task-list> -->
+    <!-- <task-list></task-list> -->
 
-      <!-- <message title="Hello World" body="Lorem ipsum dolar sit amet"></message>
+    <!-- <message title="Hello World" body="Lorem ipsum dolar sit amet"></message>
       <message title="Hi harshith" body="Lorem ipsum dolar sit amet"></message> -->
 
-     <modal v-if="showModal" @close="showModal = false" text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae
-     minus libero."></modal>
+    <tabs>
+      <tab name="About Us" :selected="true">
+        <h1>Here is the content of about us</h1>
+      </tab>
+      <tab name="About Our Culture">
+        <h1>Here is the content of about culture</h1>
+      </tab>
+      <tab name="About Our Vision">
+        <h1>Here is the content of about vision</h1>
+      </tab>
+    </tabs>
 
-     <button type="button" @click="showModal = true">Open</button>
+    <!-- <modal v-if="showModal" @close="showModal = false" text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae
+     minus libero."></modal> -->
 
-    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-    <script src="./js/main.js"></script>
-  </body>
+    <!-- <button type="button" @click="showModal = true">Open</button> -->
+  </div>
+  <script src="./js/main.js"></script>
+</body>
+
 </html>

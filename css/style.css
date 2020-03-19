@@ -1,0 +1,9 @@
+.color {
+  color: aqua;
+  background-color: aqua;
+}
+
+.isLoading {
+  color: white;
+  background-color: red;
+}

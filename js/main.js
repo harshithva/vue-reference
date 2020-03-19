@@ -1,0 +1,114 @@
+Vue.component("modal", {
+  props: ["text"],
+  template: `
+  <div class="modal  is-active is-clipped">
+<div class="modal-background"></div>
+<div class="modal-content">
+  <div class="box">
+    <p>
+     {{text}}
+    </p>
+  </div>
+</div>
+<button class="modal-close is-large" aria-label="close" @click="$emit('close')"></button>
+</div>
+</div>`,
+
+  data() {
+    return {
+      isVisible: true
+    };
+  },
+
+  methods: {
+    hideModal() {
+      this.isVisible = false;
+    }
+  }
+});
+
+Vue.component("message", {
+  props: ["title", "body"],
+  template: `
+  <div class="container" v-show="isVisible">
+  <article class="message">
+    <div class="message-header">
+    <p>{{ title }}</p>
+    <button class="delete" aria-label="delete" @click="hideModal"></button>
+  </div>
+  <div class="message-body">
+  {{body}}
+  </div>
+</article>
+</div>`,
+
+  data() {
+    return {
+      isVisible: true
+    };
+  },
+
+  methods: {
+    hideModal() {
+      this.isVisible = false;
+    }
+  }
+});
+
+Vue.component("task-list", {
+  template: `<div><task v-for="task in tasks">{{ task.description }}</task></div>`,
+  data() {
+    return {
+      tasks: [
+        { description: "go up", completed: true },
+        { description: "go down", completed: false },
+        { description: "go right", completed: true }
+      ]
+    };
+  }
+});
+
+Vue.component("task", {
+  template: "<li><slot></slot></li>"
+});
+
+new Vue({
+  el: "#app",
+  data: {
+    message: "Hello world",
+    newName: "",
+    names: ["Harshith", "Omshree", "Vinyas"],
+    title: "You just hovered over me",
+    className: "color",
+    isLoading: false,
+    showModal: false,
+    tasks: [
+      { description: "go up", completed: true },
+      { description: "go down", completed: false },
+      { description: "go right", completed: true }
+    ]
+  },
+  methods: {
+    addName() {
+      this.names.push(this.newName);
+      this.newName = "";
+    },
+    toggleClass() {
+      this.isLoading = true;
+    }
+  },
+  computed: {
+    reversedMsg() {
+      return this.message
+        .split("")
+        .reverse()
+        .join("");
+    },
+    incompleteTasks() {
+      return this.tasks.filter(task => !task.completed);
+    }
+  },
+  mounted() {
+    alert("ready");
+  }
+});

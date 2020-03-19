@@ -1,3 +1,12 @@
+Vue.component('coupon', {
+  template: `<input type="text" placeholder="Enter coupon" @blur="onCouponApplied">`,
+  methods: {
+    onCouponApplied() {
+      this.$emit('applied');
+    }
+  }
+});
+
 Vue.component("tabs", {
   template: `
   <div class="container">
@@ -137,6 +146,7 @@ new Vue({
     className: "color",
     isLoading: false,
     showModal: false,
+    CouponApplied: false,
     tasks: [
       { description: "go up", completed: true },
       { description: "go down", completed: false },
@@ -150,6 +160,10 @@ new Vue({
     },
     toggleClass() {
       this.isLoading = true;
+    },
+    onCouponApplied() {
+      alert('Applied');
+      this.CouponApplied = true
     }
   },
   computed: {

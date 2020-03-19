@@ -63,7 +63,7 @@
     <!-- <message title="Hello World" body="Lorem ipsum dolar sit amet"></message>
       <message title="Hi harshith" body="Lorem ipsum dolar sit amet"></message> -->
 
-    <tabs>
+    <!-- <tabs>
       <tab name="About Us" :selected="true">
         <h1>Here is the content of about us</h1>
       </tab>
@@ -73,12 +73,15 @@
       <tab name="About Our Vision">
         <h1>Here is the content of about vision</h1>
       </tab>
-    </tabs>
+    </tabs> -->
 
     <!-- <modal v-if="showModal" @close="showModal = false" text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae
      minus libero."></modal> -->
 
     <!-- <button type="button" @click="showModal = true">Open</button> -->
+
+    <coupon @applied="onCouponApplied"></coupon>
+    <h1 v-show="CouponApplied">Coupon was applied</h1>
   </div>
   <script src="./js/main.js"></script>
 </body>

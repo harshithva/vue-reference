@@ -81,10 +81,15 @@
     <!-- <button type="button" @click="showModal = true">Open</button> -->
 
     <!-- Component Communication -->
-    <coupon @applied="onCouponApplied"></coupon>
+    <!-- <coupon @applied="onCouponApplied"></coupon> -->
 
-    <h1 v-show="CouponApplied">Coupon was applied</h1>
+    <!-- <h1 v-show="CouponApplied">Coupon was applied</h1> -->
 
+    <!-- Named slots -->
+    <modal-card>
+      <template slot="title">Hi, Title</template>
+      Temporary content
+    </modal-card>
   </div>
   <script src="./js/main.js"></script>
 </body>

@@ -15,6 +15,12 @@ window.Event = new class {
 
 }
 
+Vue.component('progress-view', {
+  data() {
+    return { completedRate: 0 }
+  }
+})
+
 Vue.component('modal-card', {
   template: `
   <div>

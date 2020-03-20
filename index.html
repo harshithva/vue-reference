@@ -86,10 +86,19 @@
     <!-- <h1 v-show="CouponApplied">Coupon was applied</h1> -->
 
     <!-- Named slots -->
-    <modal-card>
+    <!-- <modal-card>
       <template slot="title">Hi, Title</template>
       Temporary content
-    </modal-card>
+    </modal-card> -->
+
+    <progress-view inline-template>
+      <div>
+        <h1>Your progress through this course {{completedRate}}</h1>
+        <button @click="completedRate += 20"> Update completion</button>
+      </div>
+
+    </progress-view>
+
   </div>
   <script src="./js/main.js"></script>
 </body>
